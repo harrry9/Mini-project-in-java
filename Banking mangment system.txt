@@ -1,0 +1,99 @@
+
+package com.sit.controller;
+
+import java.util.Scanner;
+
+public class BankAccount {
+	static double balance =10000;
+	
+	
+	static Scanner sc=new Scanner(System.in);
+
+	public static void checkbalance() {
+		
+		System.out.println("Balance is:"+balance);
+		
+		
+	}
+	static double result;
+	public static void deposite() {
+		
+		System.out.println("Enter your amount which is deposited : ");
+		double depoAmount=sc.nextDouble();
+		 result=balance+depoAmount;
+		System.out.println("After deposited balance: "+result);
+		}
+
+	public static void withdraw() {
+		
+		System.out.println("Enetr your amount which is withdraw : ");
+		double withAmount=sc.nextDouble();
+		
+		System.out.println("After withdraw balance :"+(result-withAmount));
+		
+		
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+
+package com.sit.client;
+
+import java.util.Scanner;
+
+import com.sit.controller.BankAccount;
+
+public class BankSystem {
+	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		
+		while(true) {
+		System.out.println("1.Check Balance ");
+		System.out.println("2.Deposit Money ");
+		System.out.println("3.Withdraw Money ");
+		System.out.println("4.Exit ");
+		
+		System.out.println("Enter your choice:" );
+		int choice=sc.nextInt();
+		
+		 if(choice==1)
+		 {
+			 BankAccount.checkbalance();
+		 }
+		 else if(choice==2) {
+			 BankAccount.deposite();
+
+			 
+		 }
+		 else if(choice==3) {
+			 BankAccount.withdraw();
+
+			 
+		 }
+		 else if(choice ==4){
+			 System.out.println("Exit");
+			 break;
+		}
+		 else {
+			 System.out.println("Invalid Choice");
+		 }
+		
+		}
+		
+		
+	}
+
+}
+
+
+
